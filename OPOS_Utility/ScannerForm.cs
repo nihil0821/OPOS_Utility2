@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace OPOS_Utility
 {
-    public partial class Form1 : Form
+    public partial class ScannerForm : Form
     {
-        public Form1()
+        public ScannerForm()
         {
             InitializeComponent();
         }
