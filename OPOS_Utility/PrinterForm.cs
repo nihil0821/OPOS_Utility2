@@ -16,6 +16,13 @@ namespace OPOS_Utility
         int returnCode_claim = -1;
         int returnCode_release = -1;
         int returnCode_close = -1;
+        int resultCode_open = 0;
+        int resultCode_claim = 0;
+        int resultCode_enable = 0;
+        int resultCode_release = 0;
+        int resultCode_close = 0;
+        int resultCode_disable = 0;
+
 
         string[] rkey_ptr = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\OLEforRetail\ServiceOPOS\POSPrinter").GetValueNames();
         string[] rkey_ptrSub = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\OLEforRetail\ServiceOPOS\POSPrinter").GetSubKeyNames();
@@ -51,8 +58,7 @@ namespace OPOS_Utility
             InitializeComponent();
             init();        
         }
-
-
+        
         private void PrinterForm_Load(object sender, EventArgs e)
         {
             ldn_cb.Items.AddRange(rkey_ptr);
@@ -62,19 +68,26 @@ namespace OPOS_Utility
 
         private void init()
         {
-            
+            simpleMode_chkb.Checked = false;
         }
 
         private void open_btn_Click(object sender, EventArgs e)
         {
             returnCode_open = axOPOSPOSPrinter1.Open(ldn_cb.Text);
-            close_btn.Enabled = true;
+            returnCodeOpn_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_open);
+            resultCodeOpn_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_open);
 
-            if (sender.Equals(open_btn))
+            returnCode_claim = axOPOSPOSPrinter1.ClaimDevice(500);
+            returnCodeClm_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_claim);
+            resultCodeClm_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_claim);
+
+            axOPOSPOSPrinter1.DeviceEnabled = true;
+            resultCodeEnable_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_enable);
+
+            if (returnCode_open == OPOS_ErrorConstant.OPOS_SUCCESS && returnCode_claim == OPOS_ErrorConstant.OPOS_SUCCESS)
             {
-                returnCode_claim = axOPOSPOSPrinter1.ClaimDevice(500);
-                axOPOSPOSPrinter1.DeviceEnabled = true;
-            }
+                close_btn.Enabled = true;
+            }            
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -82,60 +95,92 @@ namespace OPOS_Utility
             if(sender.Equals(close_btn))
             {
                 axOPOSPOSPrinter1.DeviceEnabled = false;
+                resultCodeDis_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_disable);
+
                 returnCode_release = axOPOSPOSPrinter1.ReleaseDevice();
+                returnCodeRel_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_release);
+                resultCodeRel_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_release);
+
+                returnCode_close = axOPOSPOSPrinter1.Close();
+                returnCodeCls_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_close);
+                resultCodeCls_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_close);
+
+                close_btn.Enabled = false;
             }
-            returnCode_close = axOPOSPOSPrinter1.Close();
+            else
+            {
+                returnCode_close = axOPOSPOSPrinter1.Close();
+                returnCodeCls_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_close);
+                resultCodeCls_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_close);
+
+                dClaim_btn.Enabled = false;
+                dEnable_btn.Enabled = false;
+                dDisable_btn.Enabled = false;
+                dRelease_btn.Enabled = false;
+                dClose_btn.Enabled = false;
+            }
+        }
+
+        private void dOpen_btn_Click(object sender, EventArgs e)
+        {
+            returnCode_open = axOPOSPOSPrinter1.Open(ldn_cb.Text);
+            returnCodeOpn_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_open);
+            resultCodeOpn_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_open);
+
+
+            if (returnCode_open == OPOS_ErrorConstant.OPOS_SUCCESS)
+            {
+                dClaim_btn.Enabled = true;
+                dClose_btn.Enabled = true;
+            }
         }
 
         private void dClaim_btn_Click(object sender, EventArgs e)
         {
             returnCode_claim = axOPOSPOSPrinter1.ClaimDevice(500);
+            returnCodeClm_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_claim);
+            resultCodeClm_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_claim);
+
+            if (returnCode_claim == OPOS_ErrorConstant.OPOS_SUCCESS)
+            {
+                dEnable_btn.Enabled = true;
+                dDisable_btn.Enabled = true;
+                dRelease_btn.Enabled = true;
+            }
         }
 
         private void dEnable_btn_Click(object sender, EventArgs e)
         {
             axOPOSPOSPrinter1.DeviceEnabled = true;
+            resultCodeEnable_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_enable);
         }
 
         private void dDisable_btn_Click(object sender, EventArgs e)
         {
             axOPOSPOSPrinter1.DeviceEnabled = false;
+            resultCodeDis_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_disable);
         }
 
         private void dRelease_btn_Click(object sender, EventArgs e)
         {
             returnCode_release = axOPOSPOSPrinter1.ReleaseDevice();
+            returnCodeRel_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(returnCode_release);
+            resultCodeRel_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(resultCode_release);
+
         }
 
         private void simpleMode_chkb_CheckedChanged(object sender, EventArgs e)
         {
+            clearResult_btn_Click(sender, e);
+
             dClaim_btn.Enabled = false;
             dEnable_btn.Enabled = false;
             dDisable_btn.Enabled = false;
             dRelease_btn.Enabled = false;
             dClose_btn.Enabled = false;
+
             if (simpleMode_chkb.Checked)
-            {
-                open_btn.Visible = true;
-                close_btn.Visible = true;
-                dOpen_btn.Enabled = false;
-
-
-                dOpen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dOpen_btn.Text = "O";
-                dClaim_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dClaim_btn.Text = "C";
-                dEnable_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dEnable_btn.Text = "E";
-                dDisable_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dDisable_btn.Text = "D";
-                dRelease_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dRelease_btn.Text = "R";
-                dClose_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                dClose_btn.Text = "C";
-            }
-            else
-            {
+            {                
                 open_btn.Visible = false;
                 close_btn.Visible = false;
                 dOpen_btn.Enabled = true;
@@ -153,6 +198,25 @@ namespace OPOS_Utility
                 dClose_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 dClose_btn.Text = "Close";
             }
+            else
+            {
+                open_btn.Visible = true;
+                close_btn.Visible = true;
+                dOpen_btn.Enabled = false;
+
+                dOpen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dOpen_btn.Text = "O";
+                dClaim_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dClaim_btn.Text = "C";
+                dEnable_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dEnable_btn.Text = "E";
+                dDisable_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dDisable_btn.Text = "D";
+                dRelease_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dRelease_btn.Text = "R";
+                dClose_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                dClose_btn.Text = "C";
+            }
         }
 
         private void repeatNum_tb_KeyPress(object sender, KeyPressEventArgs e)
@@ -167,15 +231,13 @@ namespace OPOS_Utility
         {
             isDefaultText = true;
             printTxt_rtb.Text = defaultReciptText;
-            string filePath = @"Logo.bmp";
 
+            string filePath = @"Logo.bmp";
             logoFileDialog.ShowDialog();
             filePath = logoFileDialog.FileName;
-
             int res = axOPOSPOSPrinter1.SetBitmap(1, OPOS_Constant.PTR_S_RECEIPT, filePath, OPOS_Constant.PTR_BM_ASIS, OPOS_Constant.PTR_BM_CENTER);
-            int res2 = axOPOSPOSPrinter1.PrintNormal(OPOS_Constant.PTR_S_RECEIPT, OPOS_Constant.ESC + "|1B" + OPOS_Constant.ESC + "|100fP");
-               
-
+            int res2 = axOPOSPOSPrinter1.PrintNormal(OPOS_Constant.PTR_S_RECEIPT, OPOS_Constant.PRTBITMAP + OPOS_Constant.FEEDCUT);
+            
             printTxt_rtb.Text += res + "\n" + res2;
         }
 
@@ -191,8 +253,15 @@ namespace OPOS_Utility
             }
         }
 
+        /// <summary>
+        /// Test Print Button Click Event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void printTest_btn_Click(object sender, EventArgs e)
         {
+
+            int ret = 0;
             int repeatNum = int.Parse(repeatNum_tb.Text);
             if (isDefaultText)
             {
@@ -200,9 +269,10 @@ namespace OPOS_Utility
             }
             for (int i = 0; i < repeatNum; i++)
             {
-                int ret = axOPOSPOSPrinter1.PrintNormal(OPOS_Constant.PTR_S_RECEIPT,
-                    OPOS_Constant.ESC + "|cA" + printText + OPOS_Constant.ESC + "|100fP");
+                ret = axOPOSPOSPrinter1.PrintNormal(OPOS_Constant.PTR_S_RECEIPT,
+                    OPOS_Constant.ESC + "|cA" + printText + OPOS_Constant.FEEDCUT);
             }
+            returnCodePrint_rtb.Text = OPOS_ErrorConstant.return_ErrorMessage(ret);
         }
 
         private void papercut_btn_Click(object sender, EventArgs e)
@@ -210,14 +280,53 @@ namespace OPOS_Utility
             axOPOSPOSPrinter1.CutPaper(OPOS_Constant.PTR_CP_FULLCUT);
         }
 
+        /// <summary>
+        /// Result Text Clear
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clearResult_btn_Click(object sender, EventArgs e)
         {
             returnCodeOpn_rtb.Text = "Return Code ( )";
             returnCodeClm_rtb.Text = "Return Code ( )";
-            returnCodeEnable_rtb.Text = "Return Code ( )";
-            returnCodeDis_rtb.Text = "Return Code ( )";
-            returnCodeRel_rtb.Text = "Return Code ( )";
             returnCodeCls_rtb.Text = "Return Code ( )";
+            returnCodeRel_rtb.Text = "Return Code ( )";
+            
+
+            resultCodeOpn_rtb.Text = "Result Code ( )";
+            resultCodeClm_rtb.Text = "Result Code ( )";
+            resultCodeEnable_rtb.Text = "Result Code ( )";
+            resultCodeDis_rtb.Text = "Result Code ( )";
+            resultCodeRel_rtb.Text = "Result Code ( )";
+            resultCodeCls_rtb.Text = "Result Code ( )";
+        }
+
+        /// <summary>
+        /// Printer Error Event function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void axOPOSPOSPrinter1_ErrorEvent(object sender, AxOposPOSPrinter_1_5_Lib._IOPOSPOSPrinterEvents_ErrorEventEvent e)
+        {
+            if (sender.Equals(open_btn)) { MessageBox.Show("open"); }
+            if (sender.Equals(close_btn)) { MessageBox.Show("close"); }
+            if (sender.Equals(dOpen_btn)) { MessageBox.Show("open2"); }
+            if (sender.Equals(dClaim_btn)) { MessageBox.Show("claim"); }
+            if (sender.Equals(dEnable_btn)) { MessageBox.Show("enable"); }
+            if (sender.Equals(dDisable_btn)) { MessageBox.Show("disable"); }
+            if (sender.Equals(dRelease_btn)) { MessageBox.Show("release"); }
+            if (sender.Equals(dClose_btn)) { MessageBox.Show("close2"); }
+
+            MessageBox.Show(sender.ToString()+"Error Message Box");
+            
+            OPOS_ErrorConstant.return_ErrorMessage(e.resultCode);
+
+            resultCode_open = 0;
+            resultCode_claim = 0;
+            resultCode_enable = 0;
+            resultCode_release = 0;
+            resultCode_close = 0;
+            resultCode_disable = 0;
         }
     }
 }

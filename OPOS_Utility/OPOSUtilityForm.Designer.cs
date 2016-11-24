@@ -38,9 +38,9 @@
             // 
             // utilityPanel
             // 
-            this.utilityPanel.Location = new System.Drawing.Point(12, 68);
+            this.utilityPanel.Location = new System.Drawing.Point(2, 67);
             this.utilityPanel.Name = "utilityPanel";
-            this.utilityPanel.Size = new System.Drawing.Size(652, 523);
+            this.utilityPanel.Size = new System.Drawing.Size(662, 524);
             this.utilityPanel.TabIndex = 0;
             // 
             // ptr_btn
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 653);
+            this.ClientSize = new System.Drawing.Size(671, 597);
             this.Controls.Add(this.cash_btn);
             this.Controls.Add(this.disp_btn);
             this.Controls.Add(this.msr_btn);

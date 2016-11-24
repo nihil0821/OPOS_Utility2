@@ -43,16 +43,16 @@
             this.dDisable_btn = new System.Windows.Forms.Button();
             this.dRelease_btn = new System.Windows.Forms.Button();
             this.dClose_btn = new System.Windows.Forms.Button();
-            this.returnCodeEnable_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeEnable_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCodeClm_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCodeOpn_rtb = new System.Windows.Forms.RichTextBox();
-            this.returnCodeCls_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeCls_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCodeRel_rtb = new System.Windows.Forms.RichTextBox();
-            this.returnCodeDis_rtb = new System.Windows.Forms.RichTextBox();
+            this.returnCodeCls_rtb = new System.Windows.Forms.RichTextBox();
             this.ptr_gb = new System.Windows.Forms.GroupBox();
             this.papercut_btn = new System.Windows.Forms.Button();
             this.richTextBox10 = new System.Windows.Forms.RichTextBox();
-            this.returnCode_print_rtb = new System.Windows.Forms.RichTextBox();
+            this.returnCodePrint_rtb = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.defualtTxt_btn = new System.Windows.Forms.Button();
@@ -60,9 +60,13 @@
             this.openfile_btn = new System.Windows.Forms.Button();
             this.printTest_btn = new System.Windows.Forms.Button();
             this.printTxt_rtb = new System.Windows.Forms.RichTextBox();
-            this.axOPOSPOSPrinter1 = new AxOposPOSPrinter_1_5_Lib.AxOPOSPOSPrinter();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.logoFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.resultCodeOpn_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeClm_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeDis_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeRel_rtb = new System.Windows.Forms.RichTextBox();
+            this.axOPOSPOSPrinter1 = new AxOposPOSPrinter_1_5_Lib.AxOPOSPOSPrinter();
             this.groupBox1.SuspendLayout();
             this.ptr_gb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axOPOSPOSPrinter1)).BeginInit();
@@ -97,12 +101,16 @@
             this.groupBox1.Controls.Add(this.dDisable_btn);
             this.groupBox1.Controls.Add(this.dRelease_btn);
             this.groupBox1.Controls.Add(this.dClose_btn);
-            this.groupBox1.Controls.Add(this.returnCodeEnable_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeEnable_rtb);
             this.groupBox1.Controls.Add(this.returnCodeClm_rtb);
             this.groupBox1.Controls.Add(this.returnCodeOpn_rtb);
-            this.groupBox1.Controls.Add(this.returnCodeCls_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeCls_rtb);
             this.groupBox1.Controls.Add(this.returnCodeRel_rtb);
-            this.groupBox1.Controls.Add(this.returnCodeDis_rtb);
+            this.groupBox1.Controls.Add(this.returnCodeCls_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeDis_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeRel_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeOpn_rtb);
+            this.groupBox1.Controls.Add(this.resultCodeClm_rtb);
             this.groupBox1.Location = new System.Drawing.Point(2, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 483);
@@ -192,7 +200,7 @@
             this.dOpen_btn.Text = "O";
             this.dOpen_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.dOpen_btn.UseVisualStyleBackColor = false;
-            this.dOpen_btn.Click += new System.EventHandler(this.open_btn_Click);
+            this.dOpen_btn.Click += new System.EventHandler(this.dOpen_btn_Click);
             // 
             // dClaim_btn
             // 
@@ -229,7 +237,7 @@
             this.dDisable_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dDisable_btn.Enabled = false;
             this.dDisable_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dDisable_btn.Location = new System.Drawing.Point(8, 278);
+            this.dDisable_btn.Location = new System.Drawing.Point(9, 278);
             this.dDisable_btn.Name = "dDisable_btn";
             this.dDisable_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dDisable_btn.Size = new System.Drawing.Size(93, 46);
@@ -244,7 +252,7 @@
             this.dRelease_btn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dRelease_btn.Enabled = false;
             this.dRelease_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dRelease_btn.Location = new System.Drawing.Point(8, 333);
+            this.dRelease_btn.Location = new System.Drawing.Point(9, 333);
             this.dRelease_btn.Name = "dRelease_btn";
             this.dRelease_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dRelease_btn.Size = new System.Drawing.Size(93, 46);
@@ -260,7 +268,7 @@
             this.dClose_btn.Enabled = false;
             this.dClose_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dClose_btn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dClose_btn.Location = new System.Drawing.Point(8, 388);
+            this.dClose_btn.Location = new System.Drawing.Point(9, 388);
             this.dClose_btn.Name = "dClose_btn";
             this.dClose_btn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dClose_btn.Size = new System.Drawing.Size(93, 46);
@@ -270,20 +278,22 @@
             this.dClose_btn.UseVisualStyleBackColor = false;
             this.dClose_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
-            // returnCodeEnable_rtb
+            // resultCodeEnable_rtb
             // 
-            this.returnCodeEnable_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.returnCodeEnable_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.returnCodeEnable_rtb.Location = new System.Drawing.Point(100, 227);
-            this.returnCodeEnable_rtb.Multiline = false;
-            this.returnCodeEnable_rtb.Name = "returnCodeEnable_rtb";
-            this.returnCodeEnable_rtb.ReadOnly = true;
-            this.returnCodeEnable_rtb.Size = new System.Drawing.Size(149, 21);
-            this.returnCodeEnable_rtb.TabIndex = 24;
-            this.returnCodeEnable_rtb.Text = "Return Code ( )";
+            this.resultCodeEnable_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeEnable_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeEnable_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeEnable_rtb.Location = new System.Drawing.Point(100, 251);
+            this.resultCodeEnable_rtb.Multiline = false;
+            this.resultCodeEnable_rtb.Name = "resultCodeEnable_rtb";
+            this.resultCodeEnable_rtb.ReadOnly = true;
+            this.resultCodeEnable_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeEnable_rtb.TabIndex = 24;
+            this.resultCodeEnable_rtb.Text = "Result Code ( )";
             // 
             // returnCodeClm_rtb
             // 
+            this.returnCodeClm_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.returnCodeClm_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.returnCodeClm_rtb.ForeColor = System.Drawing.Color.Blue;
             this.returnCodeClm_rtb.Location = new System.Drawing.Point(100, 172);
@@ -296,6 +306,7 @@
             // 
             // returnCodeOpn_rtb
             // 
+            this.returnCodeOpn_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.returnCodeOpn_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.returnCodeOpn_rtb.ForeColor = System.Drawing.Color.Blue;
             this.returnCodeOpn_rtb.Location = new System.Drawing.Point(100, 118);
@@ -304,25 +315,28 @@
             this.returnCodeOpn_rtb.ReadOnly = true;
             this.returnCodeOpn_rtb.Size = new System.Drawing.Size(149, 21);
             this.returnCodeOpn_rtb.TabIndex = 22;
+            this.returnCodeOpn_rtb.TabStop = false;
             this.returnCodeOpn_rtb.Text = "Return Code ( )";
             // 
-            // returnCodeCls_rtb
+            // resultCodeCls_rtb
             // 
-            this.returnCodeCls_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.returnCodeCls_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.returnCodeCls_rtb.Location = new System.Drawing.Point(99, 389);
-            this.returnCodeCls_rtb.Multiline = false;
-            this.returnCodeCls_rtb.Name = "returnCodeCls_rtb";
-            this.returnCodeCls_rtb.ReadOnly = true;
-            this.returnCodeCls_rtb.Size = new System.Drawing.Size(149, 21);
-            this.returnCodeCls_rtb.TabIndex = 29;
-            this.returnCodeCls_rtb.Text = "Return Code ( )";
+            this.resultCodeCls_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeCls_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeCls_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeCls_rtb.Location = new System.Drawing.Point(100, 413);
+            this.resultCodeCls_rtb.Multiline = false;
+            this.resultCodeCls_rtb.Name = "resultCodeCls_rtb";
+            this.resultCodeCls_rtb.ReadOnly = true;
+            this.resultCodeCls_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeCls_rtb.TabIndex = 29;
+            this.resultCodeCls_rtb.Text = "Result Code ( )";
             // 
             // returnCodeRel_rtb
             // 
+            this.returnCodeRel_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.returnCodeRel_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.returnCodeRel_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.returnCodeRel_rtb.Location = new System.Drawing.Point(99, 334);
+            this.returnCodeRel_rtb.Location = new System.Drawing.Point(100, 334);
             this.returnCodeRel_rtb.Multiline = false;
             this.returnCodeRel_rtb.Name = "returnCodeRel_rtb";
             this.returnCodeRel_rtb.ReadOnly = true;
@@ -330,23 +344,24 @@
             this.returnCodeRel_rtb.TabIndex = 28;
             this.returnCodeRel_rtb.Text = "Return Code ( )";
             // 
-            // returnCodeDis_rtb
+            // returnCodeCls_rtb
             // 
-            this.returnCodeDis_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.returnCodeDis_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.returnCodeDis_rtb.Location = new System.Drawing.Point(99, 279);
-            this.returnCodeDis_rtb.Multiline = false;
-            this.returnCodeDis_rtb.Name = "returnCodeDis_rtb";
-            this.returnCodeDis_rtb.ReadOnly = true;
-            this.returnCodeDis_rtb.Size = new System.Drawing.Size(149, 21);
-            this.returnCodeDis_rtb.TabIndex = 27;
-            this.returnCodeDis_rtb.Text = "Return Code ( )";
+            this.returnCodeCls_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.returnCodeCls_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.returnCodeCls_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.returnCodeCls_rtb.Location = new System.Drawing.Point(100, 390);
+            this.returnCodeCls_rtb.Multiline = false;
+            this.returnCodeCls_rtb.Name = "returnCodeCls_rtb";
+            this.returnCodeCls_rtb.ReadOnly = true;
+            this.returnCodeCls_rtb.Size = new System.Drawing.Size(149, 21);
+            this.returnCodeCls_rtb.TabIndex = 27;
+            this.returnCodeCls_rtb.Text = "Return Code ( )";
             // 
             // ptr_gb
             // 
             this.ptr_gb.Controls.Add(this.papercut_btn);
             this.ptr_gb.Controls.Add(this.richTextBox10);
-            this.ptr_gb.Controls.Add(this.returnCode_print_rtb);
+            this.ptr_gb.Controls.Add(this.returnCodePrint_rtb);
             this.ptr_gb.Controls.Add(this.richTextBox4);
             this.ptr_gb.Controls.Add(this.richTextBox3);
             this.ptr_gb.Controls.Add(this.defualtTxt_btn);
@@ -386,18 +401,18 @@
             this.richTextBox10.TabIndex = 39;
             this.richTextBox10.Text = "Print Text";
             // 
-            // returnCode_print_rtb
+            // returnCodePrint_rtb
             // 
-            this.returnCode_print_rtb.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.returnCode_print_rtb.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.returnCode_print_rtb.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.returnCode_print_rtb.Location = new System.Drawing.Point(149, 377);
-            this.returnCode_print_rtb.Multiline = false;
-            this.returnCode_print_rtb.Name = "returnCode_print_rtb";
-            this.returnCode_print_rtb.ReadOnly = true;
-            this.returnCode_print_rtb.Size = new System.Drawing.Size(208, 28);
-            this.returnCode_print_rtb.TabIndex = 37;
-            this.returnCode_print_rtb.Text = "Return Code ( )";
+            this.returnCodePrint_rtb.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.returnCodePrint_rtb.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.returnCodePrint_rtb.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.returnCodePrint_rtb.Location = new System.Drawing.Point(149, 377);
+            this.returnCodePrint_rtb.Multiline = false;
+            this.returnCodePrint_rtb.Name = "returnCodePrint_rtb";
+            this.returnCodePrint_rtb.ReadOnly = true;
+            this.returnCodePrint_rtb.Size = new System.Drawing.Size(208, 28);
+            this.returnCodePrint_rtb.TabIndex = 37;
+            this.returnCodePrint_rtb.Text = "Return Code ( )";
             // 
             // richTextBox4
             // 
@@ -480,15 +495,6 @@
             this.printTxt_rtb.TabIndex = 38;
             this.printTxt_rtb.Text = "";
             // 
-            // axOPOSPOSPrinter1
-            // 
-            this.axOPOSPOSPrinter1.Enabled = true;
-            this.axOPOSPOSPrinter1.Location = new System.Drawing.Point(0, 0);
-            this.axOPOSPOSPrinter1.Name = "axOPOSPOSPrinter1";
-            this.axOPOSPOSPrinter1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axOPOSPOSPrinter1.OcxState")));
-            this.axOPOSPOSPrinter1.Size = new System.Drawing.Size(0, 0);
-            this.axOPOSPOSPrinter1.TabIndex = 0;
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
@@ -497,10 +503,73 @@
             // 
             this.logoFileDialog.FileName = "logoFileDialog";
             // 
+            // resultCodeOpn_rtb
+            // 
+            this.resultCodeOpn_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeOpn_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeOpn_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeOpn_rtb.Location = new System.Drawing.Point(100, 141);
+            this.resultCodeOpn_rtb.Multiline = false;
+            this.resultCodeOpn_rtb.Name = "resultCodeOpn_rtb";
+            this.resultCodeOpn_rtb.ReadOnly = true;
+            this.resultCodeOpn_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeOpn_rtb.TabIndex = 31;
+            this.resultCodeOpn_rtb.Text = "Result Code ( )";
+            // 
+            // resultCodeClm_rtb
+            // 
+            this.resultCodeClm_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeClm_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeClm_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeClm_rtb.Location = new System.Drawing.Point(100, 196);
+            this.resultCodeClm_rtb.Multiline = false;
+            this.resultCodeClm_rtb.Name = "resultCodeClm_rtb";
+            this.resultCodeClm_rtb.ReadOnly = true;
+            this.resultCodeClm_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeClm_rtb.TabIndex = 32;
+            this.resultCodeClm_rtb.Text = "Result Code ( )";
+            // 
+            // resultCodeDis_rtb
+            // 
+            this.resultCodeDis_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeDis_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeDis_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeDis_rtb.Location = new System.Drawing.Point(100, 303);
+            this.resultCodeDis_rtb.Multiline = false;
+            this.resultCodeDis_rtb.Name = "resultCodeDis_rtb";
+            this.resultCodeDis_rtb.ReadOnly = true;
+            this.resultCodeDis_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeDis_rtb.TabIndex = 33;
+            this.resultCodeDis_rtb.Text = "Result Code ( )";
+            // 
+            // resultCodeRel_rtb
+            // 
+            this.resultCodeRel_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeRel_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeRel_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeRel_rtb.Location = new System.Drawing.Point(100, 358);
+            this.resultCodeRel_rtb.Multiline = false;
+            this.resultCodeRel_rtb.Name = "resultCodeRel_rtb";
+            this.resultCodeRel_rtb.ReadOnly = true;
+            this.resultCodeRel_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeRel_rtb.TabIndex = 34;
+            this.resultCodeRel_rtb.Text = "Result Code ( )";
+            // 
+            // axOPOSPOSPrinter1
+            // 
+            this.axOPOSPOSPrinter1.Enabled = true;
+            this.axOPOSPOSPrinter1.Location = new System.Drawing.Point(0, 0);
+            this.axOPOSPOSPrinter1.Name = "axOPOSPOSPrinter1";
+            this.axOPOSPOSPrinter1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axOPOSPOSPrinter1.OcxState")));
+            this.axOPOSPOSPrinter1.Size = new System.Drawing.Size(0, 0);
+            this.axOPOSPOSPrinter1.TabIndex = 0;
+            this.axOPOSPOSPrinter1.ErrorEvent += new AxOposPOSPrinter_1_5_Lib._IOPOSPOSPrinterEvents_ErrorEventEventHandler(this.axOPOSPOSPrinter1_ErrorEvent);
+            // 
             // PrinterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(644, 492);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
@@ -534,16 +603,16 @@
         private System.Windows.Forms.Button dDisable_btn;
         private System.Windows.Forms.Button dRelease_btn;
         private System.Windows.Forms.Button dClose_btn;
-        private System.Windows.Forms.RichTextBox returnCodeEnable_rtb;
+        private System.Windows.Forms.RichTextBox resultCodeEnable_rtb;
         private System.Windows.Forms.RichTextBox returnCodeClm_rtb;
         private System.Windows.Forms.RichTextBox returnCodeOpn_rtb;
-        private System.Windows.Forms.RichTextBox returnCodeCls_rtb;
+        private System.Windows.Forms.RichTextBox resultCodeCls_rtb;
         private System.Windows.Forms.RichTextBox returnCodeRel_rtb;
-        private System.Windows.Forms.RichTextBox returnCodeDis_rtb;
+        private System.Windows.Forms.RichTextBox returnCodeCls_rtb;
         private System.Windows.Forms.GroupBox ptr_gb;
         private System.Windows.Forms.Button papercut_btn;
         private System.Windows.Forms.RichTextBox richTextBox10;
-        private System.Windows.Forms.RichTextBox returnCode_print_rtb;
+        private System.Windows.Forms.RichTextBox returnCodePrint_rtb;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button defualtTxt_btn;
@@ -553,5 +622,9 @@
         private System.Windows.Forms.RichTextBox printTxt_rtb;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.OpenFileDialog logoFileDialog;
+        private System.Windows.Forms.RichTextBox resultCodeDis_rtb;
+        private System.Windows.Forms.RichTextBox resultCodeRel_rtb;
+        private System.Windows.Forms.RichTextBox resultCodeOpn_rtb;
+        private System.Windows.Forms.RichTextBox resultCodeClm_rtb;
     }
 }

@@ -27,5 +27,7 @@ namespace OPOS_Utility
 
         //** "Printer letter attribute"
         public const string ESC = "\x1B";
+        public const string FEEDCUT = "\x1B" + "|100fP"; //ESC + Feed Cut 100
+        public const string PRTBITMAP = "\x1B" + "|1B";
     }
 }
