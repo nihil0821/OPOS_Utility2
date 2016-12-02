@@ -49,6 +49,10 @@
             this.resultCodeCls_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCodeRel_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCodeCls_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeDis_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeRel_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeOpn_rtb = new System.Windows.Forms.RichTextBox();
+            this.resultCodeClm_rtb = new System.Windows.Forms.RichTextBox();
             this.ptr_gb = new System.Windows.Forms.GroupBox();
             this.papercut_btn = new System.Windows.Forms.Button();
             this.richTextBox10 = new System.Windows.Forms.RichTextBox();
@@ -62,10 +66,6 @@
             this.printTxt_rtb = new System.Windows.Forms.RichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.logoFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.resultCodeOpn_rtb = new System.Windows.Forms.RichTextBox();
-            this.resultCodeClm_rtb = new System.Windows.Forms.RichTextBox();
-            this.resultCodeDis_rtb = new System.Windows.Forms.RichTextBox();
-            this.resultCodeRel_rtb = new System.Windows.Forms.RichTextBox();
             this.axOPOSPOSPrinter1 = new AxOposPOSPrinter_1_5_Lib.AxOPOSPOSPrinter();
             this.groupBox1.SuspendLayout();
             this.ptr_gb.SuspendLayout();
@@ -113,7 +113,7 @@
             this.groupBox1.Controls.Add(this.resultCodeClm_rtb);
             this.groupBox1.Location = new System.Drawing.Point(2, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 483);
+            this.groupBox1.Size = new System.Drawing.Size(270, 485);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -357,151 +357,31 @@
             this.returnCodeCls_rtb.TabIndex = 27;
             this.returnCodeCls_rtb.Text = "Return Code ( )";
             // 
-            // ptr_gb
+            // resultCodeDis_rtb
             // 
-            this.ptr_gb.Controls.Add(this.papercut_btn);
-            this.ptr_gb.Controls.Add(this.richTextBox10);
-            this.ptr_gb.Controls.Add(this.returnCodePrint_rtb);
-            this.ptr_gb.Controls.Add(this.richTextBox4);
-            this.ptr_gb.Controls.Add(this.richTextBox3);
-            this.ptr_gb.Controls.Add(this.defualtTxt_btn);
-            this.ptr_gb.Controls.Add(this.repeatNum_tb);
-            this.ptr_gb.Controls.Add(this.openfile_btn);
-            this.ptr_gb.Controls.Add(this.printTest_btn);
-            this.ptr_gb.Controls.Add(this.printTxt_rtb);
-            this.ptr_gb.Location = new System.Drawing.Point(278, 5);
-            this.ptr_gb.Name = "ptr_gb";
-            this.ptr_gb.Size = new System.Drawing.Size(363, 483);
-            this.ptr_gb.TabIndex = 22;
-            this.ptr_gb.TabStop = false;
+            this.resultCodeDis_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeDis_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeDis_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeDis_rtb.Location = new System.Drawing.Point(100, 303);
+            this.resultCodeDis_rtb.Multiline = false;
+            this.resultCodeDis_rtb.Name = "resultCodeDis_rtb";
+            this.resultCodeDis_rtb.ReadOnly = true;
+            this.resultCodeDis_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeDis_rtb.TabIndex = 33;
+            this.resultCodeDis_rtb.Text = "Result Code ( )";
             // 
-            // papercut_btn
+            // resultCodeRel_rtb
             // 
-            this.papercut_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.papercut_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.papercut_btn.Location = new System.Drawing.Point(144, 59);
-            this.papercut_btn.Name = "papercut_btn";
-            this.papercut_btn.Size = new System.Drawing.Size(82, 30);
-            this.papercut_btn.TabIndex = 40;
-            this.papercut_btn.Text = "Paper Cut";
-            this.papercut_btn.UseVisualStyleBackColor = false;
-            this.papercut_btn.Click += new System.EventHandler(this.papercut_btn_Click);
-            // 
-            // richTextBox10
-            // 
-            this.richTextBox10.BackColor = System.Drawing.Color.Cyan;
-            this.richTextBox10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.richTextBox10.Location = new System.Drawing.Point(6, 148);
-            this.richTextBox10.MaxLength = 5;
-            this.richTextBox10.Multiline = false;
-            this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.ReadOnly = true;
-            this.richTextBox10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox10.Size = new System.Drawing.Size(351, 25);
-            this.richTextBox10.TabIndex = 39;
-            this.richTextBox10.Text = "Print Text";
-            // 
-            // returnCodePrint_rtb
-            // 
-            this.returnCodePrint_rtb.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.returnCodePrint_rtb.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.returnCodePrint_rtb.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.returnCodePrint_rtb.Location = new System.Drawing.Point(149, 377);
-            this.returnCodePrint_rtb.Multiline = false;
-            this.returnCodePrint_rtb.Name = "returnCodePrint_rtb";
-            this.returnCodePrint_rtb.ReadOnly = true;
-            this.returnCodePrint_rtb.Size = new System.Drawing.Size(208, 28);
-            this.returnCodePrint_rtb.TabIndex = 37;
-            this.returnCodePrint_rtb.Text = "Return Code ( )";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.BackColor = System.Drawing.Color.MistyRose;
-            this.richTextBox4.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.richTextBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.richTextBox4.Location = new System.Drawing.Point(6, 12);
-            this.richTextBox4.Multiline = false;
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.Size = new System.Drawing.Size(351, 44);
-            this.richTextBox4.TabIndex = 37;
-            this.richTextBox4.Text = "Printer Print";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.Color.Cyan;
-            this.richTextBox3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.richTextBox3.Location = new System.Drawing.Point(6, 62);
-            this.richTextBox3.MaxLength = 5;
-            this.richTextBox3.Multiline = false;
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.richTextBox3.Size = new System.Drawing.Size(86, 25);
-            this.richTextBox3.TabIndex = 27;
-            this.richTextBox3.Text = "Repeat Num";
-            // 
-            // defualtTxt_btn
-            // 
-            this.defualtTxt_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.defualtTxt_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.defualtTxt_btn.Location = new System.Drawing.Point(6, 93);
-            this.defualtTxt_btn.Name = "defualtTxt_btn";
-            this.defualtTxt_btn.Size = new System.Drawing.Size(99, 44);
-            this.defualtTxt_btn.TabIndex = 24;
-            this.defualtTxt_btn.Text = "Default Text";
-            this.defualtTxt_btn.UseVisualStyleBackColor = false;
-            this.defualtTxt_btn.Click += new System.EventHandler(this.defualtTxt_btn_Click);
-            // 
-            // repeatNum_tb
-            // 
-            this.repeatNum_tb.Location = new System.Drawing.Point(98, 62);
-            this.repeatNum_tb.MaxLength = 4;
-            this.repeatNum_tb.Name = "repeatNum_tb";
-            this.repeatNum_tb.Size = new System.Drawing.Size(38, 21);
-            this.repeatNum_tb.TabIndex = 23;
-            this.repeatNum_tb.Text = "1";
-            this.repeatNum_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repeatNum_tb_KeyPress);
-            // 
-            // openfile_btn
-            // 
-            this.openfile_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.openfile_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.openfile_btn.Location = new System.Drawing.Point(111, 94);
-            this.openfile_btn.Name = "openfile_btn";
-            this.openfile_btn.Size = new System.Drawing.Size(115, 44);
-            this.openfile_btn.TabIndex = 8;
-            this.openfile_btn.Text = "Open .TXT file";
-            this.openfile_btn.UseVisualStyleBackColor = false;
-            this.openfile_btn.Click += new System.EventHandler(this.openfile_btn_Click);
-            // 
-            // printTest_btn
-            // 
-            this.printTest_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.printTest_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.printTest_btn.Location = new System.Drawing.Point(6, 371);
-            this.printTest_btn.Name = "printTest_btn";
-            this.printTest_btn.Size = new System.Drawing.Size(137, 45);
-            this.printTest_btn.TabIndex = 7;
-            this.printTest_btn.Text = "Print Test";
-            this.printTest_btn.UseVisualStyleBackColor = false;
-            this.printTest_btn.Click += new System.EventHandler(this.printTest_btn_Click);
-            // 
-            // printTxt_rtb
-            // 
-            this.printTxt_rtb.Location = new System.Drawing.Point(6, 172);
-            this.printTxt_rtb.Name = "printTxt_rtb";
-            this.printTxt_rtb.Size = new System.Drawing.Size(351, 189);
-            this.printTxt_rtb.TabIndex = 38;
-            this.printTxt_rtb.Text = "";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // logoFileDialog
-            // 
-            this.logoFileDialog.FileName = "logoFileDialog";
+            this.resultCodeRel_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.resultCodeRel_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.resultCodeRel_rtb.ForeColor = System.Drawing.Color.Blue;
+            this.resultCodeRel_rtb.Location = new System.Drawing.Point(100, 358);
+            this.resultCodeRel_rtb.Multiline = false;
+            this.resultCodeRel_rtb.Name = "resultCodeRel_rtb";
+            this.resultCodeRel_rtb.ReadOnly = true;
+            this.resultCodeRel_rtb.Size = new System.Drawing.Size(149, 21);
+            this.resultCodeRel_rtb.TabIndex = 34;
+            this.resultCodeRel_rtb.Text = "Result Code ( )";
             // 
             // resultCodeOpn_rtb
             // 
@@ -529,31 +409,151 @@
             this.resultCodeClm_rtb.TabIndex = 32;
             this.resultCodeClm_rtb.Text = "Result Code ( )";
             // 
-            // resultCodeDis_rtb
+            // ptr_gb
             // 
-            this.resultCodeDis_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resultCodeDis_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resultCodeDis_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.resultCodeDis_rtb.Location = new System.Drawing.Point(100, 303);
-            this.resultCodeDis_rtb.Multiline = false;
-            this.resultCodeDis_rtb.Name = "resultCodeDis_rtb";
-            this.resultCodeDis_rtb.ReadOnly = true;
-            this.resultCodeDis_rtb.Size = new System.Drawing.Size(149, 21);
-            this.resultCodeDis_rtb.TabIndex = 33;
-            this.resultCodeDis_rtb.Text = "Result Code ( )";
+            this.ptr_gb.Controls.Add(this.papercut_btn);
+            this.ptr_gb.Controls.Add(this.richTextBox10);
+            this.ptr_gb.Controls.Add(this.returnCodePrint_rtb);
+            this.ptr_gb.Controls.Add(this.richTextBox4);
+            this.ptr_gb.Controls.Add(this.richTextBox3);
+            this.ptr_gb.Controls.Add(this.defualtTxt_btn);
+            this.ptr_gb.Controls.Add(this.repeatNum_tb);
+            this.ptr_gb.Controls.Add(this.openfile_btn);
+            this.ptr_gb.Controls.Add(this.printTest_btn);
+            this.ptr_gb.Controls.Add(this.printTxt_rtb);
+            this.ptr_gb.Location = new System.Drawing.Point(278, 5);
+            this.ptr_gb.Name = "ptr_gb";
+            this.ptr_gb.Size = new System.Drawing.Size(363, 483);
+            this.ptr_gb.TabIndex = 22;
+            this.ptr_gb.TabStop = false;
             // 
-            // resultCodeRel_rtb
+            // papercut_btn
             // 
-            this.resultCodeRel_rtb.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.resultCodeRel_rtb.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.resultCodeRel_rtb.ForeColor = System.Drawing.Color.Blue;
-            this.resultCodeRel_rtb.Location = new System.Drawing.Point(100, 358);
-            this.resultCodeRel_rtb.Multiline = false;
-            this.resultCodeRel_rtb.Name = "resultCodeRel_rtb";
-            this.resultCodeRel_rtb.ReadOnly = true;
-            this.resultCodeRel_rtb.Size = new System.Drawing.Size(149, 21);
-            this.resultCodeRel_rtb.TabIndex = 34;
-            this.resultCodeRel_rtb.Text = "Result Code ( )";
+            this.papercut_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.papercut_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.papercut_btn.Location = new System.Drawing.Point(144, 71);
+            this.papercut_btn.Name = "papercut_btn";
+            this.papercut_btn.Size = new System.Drawing.Size(82, 30);
+            this.papercut_btn.TabIndex = 40;
+            this.papercut_btn.Text = "Paper Cut";
+            this.papercut_btn.UseVisualStyleBackColor = false;
+            this.papercut_btn.Click += new System.EventHandler(this.papercut_btn_Click);
+            // 
+            // richTextBox10
+            // 
+            this.richTextBox10.BackColor = System.Drawing.Color.Cyan;
+            this.richTextBox10.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.richTextBox10.Location = new System.Drawing.Point(6, 148);
+            this.richTextBox10.MaxLength = 5;
+            this.richTextBox10.Multiline = false;
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.ReadOnly = true;
+            this.richTextBox10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.richTextBox10.Size = new System.Drawing.Size(351, 25);
+            this.richTextBox10.TabIndex = 39;
+            this.richTextBox10.Text = "Print Text";
+            // 
+            // returnCodePrint_rtb
+            // 
+            this.returnCodePrint_rtb.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.returnCodePrint_rtb.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.returnCodePrint_rtb.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.returnCodePrint_rtb.Location = new System.Drawing.Point(149, 389);
+            this.returnCodePrint_rtb.Multiline = false;
+            this.returnCodePrint_rtb.Name = "returnCodePrint_rtb";
+            this.returnCodePrint_rtb.ReadOnly = true;
+            this.returnCodePrint_rtb.Size = new System.Drawing.Size(208, 28);
+            this.returnCodePrint_rtb.TabIndex = 37;
+            this.returnCodePrint_rtb.Text = "Return Code ( )";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.Color.MistyRose;
+            this.richTextBox4.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.richTextBox4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.richTextBox4.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox4.Multiline = false;
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(351, 44);
+            this.richTextBox4.TabIndex = 37;
+            this.richTextBox4.Text = "Printer Print";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.Cyan;
+            this.richTextBox3.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.richTextBox3.Location = new System.Drawing.Point(6, 74);
+            this.richTextBox3.MaxLength = 5;
+            this.richTextBox3.Multiline = false;
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.richTextBox3.Size = new System.Drawing.Size(86, 25);
+            this.richTextBox3.TabIndex = 27;
+            this.richTextBox3.Text = "Repeat Num";
+            // 
+            // defualtTxt_btn
+            // 
+            this.defualtTxt_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.defualtTxt_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.defualtTxt_btn.Location = new System.Drawing.Point(6, 105);
+            this.defualtTxt_btn.Name = "defualtTxt_btn";
+            this.defualtTxt_btn.Size = new System.Drawing.Size(99, 44);
+            this.defualtTxt_btn.TabIndex = 24;
+            this.defualtTxt_btn.Text = "Default Text";
+            this.defualtTxt_btn.UseVisualStyleBackColor = false;
+            this.defualtTxt_btn.Click += new System.EventHandler(this.defualtTxt_btn_Click);
+            // 
+            // repeatNum_tb
+            // 
+            this.repeatNum_tb.Location = new System.Drawing.Point(98, 74);
+            this.repeatNum_tb.MaxLength = 4;
+            this.repeatNum_tb.Name = "repeatNum_tb";
+            this.repeatNum_tb.Size = new System.Drawing.Size(38, 21);
+            this.repeatNum_tb.TabIndex = 23;
+            this.repeatNum_tb.Text = "1";
+            this.repeatNum_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repeatNum_tb_KeyPress);
+            // 
+            // openfile_btn
+            // 
+            this.openfile_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.openfile_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.openfile_btn.Location = new System.Drawing.Point(111, 106);
+            this.openfile_btn.Name = "openfile_btn";
+            this.openfile_btn.Size = new System.Drawing.Size(115, 44);
+            this.openfile_btn.TabIndex = 8;
+            this.openfile_btn.Text = "Open .TXT file";
+            this.openfile_btn.UseVisualStyleBackColor = false;
+            this.openfile_btn.Click += new System.EventHandler(this.openfile_btn_Click);
+            // 
+            // printTest_btn
+            // 
+            this.printTest_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.printTest_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.printTest_btn.Location = new System.Drawing.Point(6, 383);
+            this.printTest_btn.Name = "printTest_btn";
+            this.printTest_btn.Size = new System.Drawing.Size(137, 45);
+            this.printTest_btn.TabIndex = 7;
+            this.printTest_btn.Text = "Print Test";
+            this.printTest_btn.UseVisualStyleBackColor = false;
+            this.printTest_btn.Click += new System.EventHandler(this.printTest_btn_Click);
+            // 
+            // printTxt_rtb
+            // 
+            this.printTxt_rtb.Location = new System.Drawing.Point(6, 184);
+            this.printTxt_rtb.Name = "printTxt_rtb";
+            this.printTxt_rtb.Size = new System.Drawing.Size(351, 189);
+            this.printTxt_rtb.TabIndex = 38;
+            this.printTxt_rtb.Text = "";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // logoFileDialog
+            // 
+            this.logoFileDialog.FileName = "logoFileDialog";
             // 
             // axOPOSPOSPrinter1
             // 
@@ -570,7 +570,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(644, 492);
+            this.ClientSize = new System.Drawing.Size(659, 494);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ptr_gb);

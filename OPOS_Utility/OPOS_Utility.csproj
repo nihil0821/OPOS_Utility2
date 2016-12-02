@@ -85,17 +85,17 @@
     <Compile Include="CashDrawerForm.Designer.cs">
       <DependentUpon>CashDrawerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OPOSUtilityForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OPOSUtilityForm.Designer.cs">
-      <DependentUpon>OPOSUtilityForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="LineDisplayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LineDisplayForm.Designer.cs">
       <DependentUpon>LineDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPOSUtilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OPOSUtilityForm.Designer.cs">
+      <DependentUpon>OPOSUtilityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MSRForm.cs">
       <SubType>Form</SubType>
@@ -158,6 +158,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="AxOposCashDrawer_CCO">
+      <Guid>{CCB90040-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxOposLineDisplay_CCO">
+      <Guid>{CCB90100-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxOposMSR_CCO">
+      <Guid>{CCB90120-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
     <COMReference Include="AxOposPOSPrinter_1_5_Lib">
       <Guid>{CCB90150-B81E-11D2-AB74-0040054C3719}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -166,8 +190,52 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+    <COMReference Include="AxOposScanner_CCO">
+      <Guid>{CCB90180-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="OposCashDrawer_CCO">
+      <Guid>{CCB90040-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="OposLineDisplay_CCO">
+      <Guid>{CCB90100-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="OposMSR_CCO">
+      <Guid>{CCB90120-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="OposPOSPrinter_1_5_Lib">
       <Guid>{CCB90150-B81E-11D2-AB74-0040054C3719}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="OposScanner_CCO">
+      <Guid>{CCB90180-B81E-11D2-AB74-0040054C3719}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

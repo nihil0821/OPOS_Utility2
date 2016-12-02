@@ -71,6 +71,7 @@
             this.msr_btn.TabIndex = 3;
             this.msr_btn.Text = "button3";
             this.msr_btn.UseVisualStyleBackColor = true;
+            this.msr_btn.Click += new System.EventHandler(this.msr_btn_Click);
             // 
             // disp_btn
             // 
@@ -80,6 +81,7 @@
             this.disp_btn.TabIndex = 4;
             this.disp_btn.Text = "button4";
             this.disp_btn.UseVisualStyleBackColor = true;
+            this.disp_btn.Click += new System.EventHandler(this.disp_btn_Click);
             // 
             // cash_btn
             // 
