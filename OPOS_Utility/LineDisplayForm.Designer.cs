@@ -54,7 +54,7 @@
             this.testThread_tb = new System.Windows.Forms.TextBox();
             this.flowTestStop_btn = new System.Windows.Forms.Button();
             this.returnCode5_disp_rtb = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clearText2_btn = new System.Windows.Forms.Button();
             this.resultCode3_disp_rtb = new System.Windows.Forms.RichTextBox();
             this.returnCode3_disp_rtb = new System.Windows.Forms.RichTextBox();
             this.flowTestStart_btn = new System.Windows.Forms.Button();
@@ -85,8 +85,8 @@
             this.resultCodeRel_rtb = new System.Windows.Forms.RichTextBox();
             this.resultCodeOpn_rtb = new System.Windows.Forms.RichTextBox();
             this.resultCodeClm_rtb = new System.Windows.Forms.RichTextBox();
-            this.axOPOSLineDisplay1 = new AxOposLineDisplay_CCO.AxOPOSLineDisplay();
             this.flowerLine_tmr = new System.Windows.Forms.Timer(this.components);
+            this.axOPOSLineDisplay1 = new AxOposLineDisplay_CCO.AxOPOSLineDisplay();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.disp_gb.SuspendLayout();
@@ -166,6 +166,7 @@
             this.clearText_btn.TabIndex = 36;
             this.clearText_btn.Text = "Clear Text";
             this.clearText_btn.UseVisualStyleBackColor = false;
+            this.clearText_btn.Click += new System.EventHandler(this.dispTest_btn_Click);
             // 
             // resultCode2_disp_rtb
             // 
@@ -364,7 +365,7 @@
             this.groupBox2.Controls.Add(this.testThread_tb);
             this.groupBox2.Controls.Add(this.flowTestStop_btn);
             this.groupBox2.Controls.Add(this.returnCode5_disp_rtb);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.clearText2_btn);
             this.groupBox2.Controls.Add(this.resultCode3_disp_rtb);
             this.groupBox2.Controls.Add(this.returnCode3_disp_rtb);
             this.groupBox2.Controls.Add(this.flowTestStart_btn);
@@ -411,16 +412,17 @@
             this.returnCode5_disp_rtb.TabIndex = 40;
             this.returnCode5_disp_rtb.Text = "Return Code ( )";
             // 
-            // button1
+            // clearText2_btn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(6, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 45);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Clear Text";
-            this.button1.UseVisualStyleBackColor = false;
+            this.clearText2_btn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.clearText2_btn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.clearText2_btn.Location = new System.Drawing.Point(6, 226);
+            this.clearText2_btn.Name = "clearText2_btn";
+            this.clearText2_btn.Size = new System.Drawing.Size(137, 45);
+            this.clearText2_btn.TabIndex = 36;
+            this.clearText2_btn.Text = "Clear Text";
+            this.clearText2_btn.UseVisualStyleBackColor = false;
+            this.clearText2_btn.Click += new System.EventHandler(this.dispTest_btn_Click);
             // 
             // resultCode3_disp_rtb
             // 
@@ -471,7 +473,7 @@
             this.flowLineText_rtb.Name = "flowLineText_rtb";
             this.flowLineText_rtb.Size = new System.Drawing.Size(303, 28);
             this.flowLineText_rtb.TabIndex = 24;
-            this.flowLineText_rtb.Text = "Valcretec NOHDAEGEON";
+            this.flowLineText_rtb.Text = "NOHDG FLOW TEXT TEST";
             // 
             // richTextBox19
             // 
@@ -836,6 +838,11 @@
             this.resultCodeClm_rtb.TabIndex = 32;
             this.resultCodeClm_rtb.Text = "Result Code ( )";
             // 
+            // flowerLine_tmr
+            // 
+            this.flowerLine_tmr.Interval = 300;
+            this.flowerLine_tmr.Tick += new System.EventHandler(this.dispTxtFlow);
+            // 
             // axOPOSLineDisplay1
             // 
             this.axOPOSLineDisplay1.Enabled = true;
@@ -844,11 +851,6 @@
             this.axOPOSLineDisplay1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axOPOSLineDisplay1.OcxState")));
             this.axOPOSLineDisplay1.Size = new System.Drawing.Size(192, 192);
             this.axOPOSLineDisplay1.TabIndex = 28;
-            // 
-            // flowerLine_tmr
-            // 
-            this.flowerLine_tmr.Interval = 1000;
-            this.flowerLine_tmr.Tick += new System.EventHandler(this.dispTxtFlow);
             // 
             // LineDisplayForm
             // 
@@ -899,7 +901,7 @@
         private System.Windows.Forms.TextBox testThread_tb;
         private System.Windows.Forms.Button flowTestStop_btn;
         private System.Windows.Forms.RichTextBox returnCode5_disp_rtb;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clearText2_btn;
         private System.Windows.Forms.RichTextBox resultCode3_disp_rtb;
         private System.Windows.Forms.RichTextBox returnCode3_disp_rtb;
         private System.Windows.Forms.Button flowTestStart_btn;

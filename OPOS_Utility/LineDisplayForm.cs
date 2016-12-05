@@ -29,6 +29,10 @@ namespace OPOS_Utility
 
 
         Int32 row = 0, colum = 0;
+        int count = 19;
+
+        string dispTxt ; //전체 길이 데이터
+        StringBuilder dispTxtBuilder; //데이터 담을 변수
 
         public LineDisplayForm()
         {
@@ -47,7 +51,7 @@ namespace OPOS_Utility
         private void init()
         {
             simpleMode_chkb.Checked = false;
-                        
+            dispTxtBuilder = new StringBuilder();
         }
 
         private void open_btn_Click(object sender, EventArgs e)
@@ -241,7 +245,7 @@ namespace OPOS_Utility
                 returnCode = axOPOSLineDisplay1.DisplayTextAt(row1, column1, displayText1, OPOS_Constant.DISP_DT_NORMAL);
                 returnCode = axOPOSLineDisplay1.DisplayTextAt(row1 + 1, column1, displayText2, OPOS_Constant.DISP_DT_NORMAL);
             }
-            else if (sender.Equals(clearText_btn))
+            else if (sender.Equals(clearText_btn) || sender.Equals(clearText2_btn))
             {
                 returnCode = axOPOSLineDisplay1.ClearText();
             }
@@ -260,16 +264,46 @@ namespace OPOS_Utility
 
         private void flowTestStart_btn_Click(object sender, EventArgs e)
         {
-            flowerLine_tmr.Enabled = true;
-
-            if (sender.Equals(flowTestStop_btn)) flowerLine_tmr.Enabled = false;
+            if (sender.Equals(flowTestStart_btn))
+            {
+                flowerLine_tmr.Enabled = true;
+                dispTxt = flowLineText_rtb.Text;
+            }
+            if (sender.Equals(flowTestStop_btn))
+            {
+                flowerLine_tmr.Enabled = false;
+                count = 19;
+                dispTxtBuilder.Remove(0, dispTxtBuilder.ToString().Length);
+            }
         }
 
         private void dispTxtFlow(object sender, EventArgs e)
         {
-            int returnCode = axOPOSLineDisplay1.DisplayTextAt(row, colum, "NOHDG FLOW TEXT TEST", OPOS_Constant.DISP_DT_NORMAL);
-            colum++;
-            if (colum > 19) colum = 0;        
+            int res = axOPOSLineDisplay1.DisplayText("                    ", OPOS_Constant.DISP_DT_NORMAL);
+            //int returnCode = axOPOSLineDisplay1.DisplayTextAt(row, colum, "NOHDG FLOW TEXT TEST", OPOS_Constant.DISP_DT_NORMAL);
+            //colum++;
+            //if (colum > 19) colum = 0;                   
+
+            //i = count;
+            //for(; i < 19; i++)
+            //{
+            //    colum = i;
+            //    axOPOSLineDisplay1.DisplayTextAt(row, colum, dispTxt[i - count].ToString(), OPOS_Constant.DISP_DT_NORMAL);
+            //}            
+            //count--;
+            //if (count < 0) count = 19;
+
+            //dispTxtBuilder 출력할 스트링
+            //dispTxt 전체 스트링
+                         
+            dispTxtBuilder.Append(dispTxt[19-count]);            
+            axOPOSLineDisplay1.DisplayTextAt(row, count, dispTxtBuilder.ToString(), OPOS_Constant.DISP_DT_NORMAL);
+            count--;
+            if (count < 0)
+            {
+                count = 19;
+                dispTxtBuilder.Remove(0,dispTxtBuilder.ToString().Length);
+            }
         }
 
 
