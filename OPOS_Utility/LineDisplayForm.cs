@@ -279,7 +279,6 @@ namespace OPOS_Utility
 
         private void dispTxtFlow(object sender, EventArgs e)
         {
-            int res = axOPOSLineDisplay1.DisplayText("                    ", OPOS_Constant.DISP_DT_NORMAL);
             //int returnCode = axOPOSLineDisplay1.DisplayTextAt(row, colum, "NOHDG FLOW TEXT TEST", OPOS_Constant.DISP_DT_NORMAL);
             //colum++;
             //if (colum > 19) colum = 0;                   
@@ -295,7 +294,7 @@ namespace OPOS_Utility
 
             //dispTxtBuilder 출력할 스트링
             //dispTxt 전체 스트링
-                         
+            int res = axOPOSLineDisplay1.DisplayText("                    ", OPOS_Constant.DISP_DT_NORMAL);
             dispTxtBuilder.Append(dispTxt[19-count]);            
             axOPOSLineDisplay1.DisplayTextAt(row, count, dispTxtBuilder.ToString(), OPOS_Constant.DISP_DT_NORMAL);
             count--;

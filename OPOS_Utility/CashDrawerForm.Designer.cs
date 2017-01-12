@@ -666,7 +666,7 @@
             // axOPOSCashDrawer1
             // 
             this.axOPOSCashDrawer1.Enabled = true;
-            this.axOPOSCashDrawer1.Location = new System.Drawing.Point(8, 494);
+            this.axOPOSCashDrawer1.Location = new System.Drawing.Point(196, 510);
             this.axOPOSCashDrawer1.Name = "axOPOSCashDrawer1";
             this.axOPOSCashDrawer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axOPOSCashDrawer1.OcxState")));
             this.axOPOSCashDrawer1.Size = new System.Drawing.Size(192, 192);
@@ -676,7 +676,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 494);
+            this.ClientSize = new System.Drawing.Size(647, 491);
             this.ControlBox = false;
             this.Controls.Add(this.axOPOSCashDrawer1);
             this.Controls.Add(this.cash_gb);
@@ -743,7 +743,7 @@
         private System.Windows.Forms.RichTextBox resultCodeOpn_rtb;
         private System.Windows.Forms.RichTextBox resultCodeClm_rtb;
         private System.Windows.Forms.RichTextBox richTextBox4;
-        private AxOposCashDrawer_CCO.AxOPOSCashDrawer axOPOSCashDrawer1;
         private System.Windows.Forms.Timer cashTimer;
+        private AxOposCashDrawer_CCO.AxOPOSCashDrawer axOPOSCashDrawer1;
     }
 }

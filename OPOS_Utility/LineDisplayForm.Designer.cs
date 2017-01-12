@@ -580,7 +580,7 @@
             this.open_btn.Name = "open_btn";
             this.open_btn.Size = new System.Drawing.Size(72, 156);
             this.open_btn.TabIndex = 5;
-            this.open_btn.Text = "OPEN";
+            this.open_btn.Text = "0";
             this.open_btn.UseVisualStyleBackColor = false;
             this.open_btn.Click += new System.EventHandler(this.open_btn_Click);
             // 

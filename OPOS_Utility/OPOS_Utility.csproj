@@ -67,6 +67,9 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>support.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -246,6 +249,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\cashdrawer.png" />
+    <None Include="res\disp.png" />
+    <None Include="res\msr.jpg" />
+    <None Include="res\barcode.png" />
+    <None Include="res\print.png" />
+    <Content Include="support.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
